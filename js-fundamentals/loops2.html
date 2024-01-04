@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Loops: Task 2</title>
+    <style>
+        p {
+            color: purple;
+            margin: 0.5em 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+
+    <section class="preview">
+
+
+    </section>
+
+</body>
+<script>
+    const name = document.createElement('input');
+    name.setAttribute("text", "text");
+    const button = document.createElement("button");
+    button.textContent = "Search"
+    const phoneNumber = document.createElement('p');
+
+    const para = document.createElement('p');
+
+    const phonebook = [
+        { name: 'Chris', number: '1549' },
+        { name: 'Li Kang', number: '9634' },
+        { name: 'Anne', number: '9065' },
+        { name: 'Francesca', number: '3001' },
+        { name: 'Mustafa', number: '6888' },
+        { name: 'Tina', number: '4312' },
+        { name: 'Bert', number: '7780' },
+        { name: 'Jada', number: '2282' },
+    ]
+
+    function search() {
+        let lookup = name.value;
+        for (const info of phonebook) {
+            if (info.name === lookup) {
+                phoneNumber.textContent = info.number;
+                break;
+            }
+        }
+        name.value = "";
+    }
+
+    // Add your code here
+    button.addEventListener("click", search);
+    name.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            search();
+        };
+    });
+
+    // Don't edit the code below here!
+    const section = document.querySelector('section');
+    section.appendChild(name);
+    section.appendChild(button);
+    section.appendChild(phoneNumber);
+    section.appendChild(para);
+</script>
+
+</html>

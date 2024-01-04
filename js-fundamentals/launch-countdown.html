@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="output"></div>
+
+
+    <style>
+        body {
+            margin: 2rem;
+            background-color: honeydew;
+        }
+    </style>
+
+    <script>
+        const output = document.querySelector(".output");
+        function text(n) {
+            if (n == 10) {
+                return "Countdown 10";
+            }
+            else if (n == 0) {
+                return "Blast off!";
+            }
+            else {
+                return n;
+            }
+        }
+
+
+        for (let i = 10; i >= 0; i--) {
+            const para = document.createElement('p');
+            para.textContent = text(i);
+            output.appendChild(para);
+        };
+
+        console.log(para);
+
+    </script>
+</body>
+
+</html>
